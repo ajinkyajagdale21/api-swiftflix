@@ -6,11 +6,12 @@ const bodyParser = require('body-parser')
 require("dotenv").config();
 const {initialConnection} = require('./DBconnection/DBconnect')
 const {addVideosToDB} = require('./models/video.model')
+const videos = require('./routes/video.route')
 
 initialConnection();
 app.use(cors());
 app.use(bodyParser.json())
-
+app.use('/videos',videos)
 
 //addVideosToDB();
 app.get('/',(req,res)=>{
