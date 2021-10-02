@@ -7,11 +7,15 @@ require("dotenv").config();
 const {initialConnection} = require('./DBconnection/DBconnect')
 const {addVideosToDB} = require('./models/video.model')
 const videos = require('./routes/video.route')
+const likedVideos = require('./routes/likedvideo.route')
+const auth= require('./routes/auth.route')
 
 initialConnection();
 app.use(cors());
 app.use(bodyParser.json())
 app.use('/videos',videos)
+app.use('/auth',auth)
+app.use('/likedvideos',likedVideos)
 
 //addVideosToDB();
 app.get('/',(req,res)=>{
