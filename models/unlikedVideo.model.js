@@ -6,12 +6,12 @@ const UnlikedVideoSchema= new Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
-    items:[
-        {
+    items:[{
+        _id:{
             type:String,
             ref:'Video'
         }
-    ]
+    }]
 })
 
 const UnlikedVideo= mongoose.model('UnlikedVideo',UnlikedVideoSchema)

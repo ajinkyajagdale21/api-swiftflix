@@ -3,7 +3,7 @@ const {Schema}= mongoose;
 const {data} = require('../dataSet/data')
 
 const VideoSchema= new Schema({
-    playId:{
+    _id:{
         type:String,
         required: [true,"play id is required"]
     },

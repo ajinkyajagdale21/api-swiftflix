@@ -6,12 +6,12 @@ const WatchLaterSchema= new Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
-    items:[
-        {
+    items:[{
+        _id:{
             type:String,
             ref:'Video'
         }
-    ]
+    }]
 })
 
 const WatchLater= mongoose.model('WatchLater',WatchLaterSchema)

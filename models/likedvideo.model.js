@@ -7,7 +7,7 @@ const LikedVideoSchema= new Schema({
         ref: "User"
     },
     items:[{
-        id: {type: String , ref: "Video"}
+        _id: {type: String , ref: "Video"}
     },],
 })
 
