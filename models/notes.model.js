@@ -8,7 +8,7 @@ const NotesSchema = new Schema({
   },
   notes: [
     {
-      videoId: { type: String, ref: "Video" },
+      playId: { type: String, ref: "Video" },
       text: {
         type: String,
         required: [true, "Note Cannot be empty"],

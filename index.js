@@ -10,6 +10,7 @@ const videos = require('./routes/video.route')
 const likedVideos = require('./routes/likedvideo.route')
 const unlikedVideos= require('./routes/unlikedvideo.route')
 const watchLater= require('./routes/watchLater.route')
+const notes= require('./routes/notes.route')
 const auth= require('./routes/auth.route')
 
 initialConnection();
@@ -20,6 +21,7 @@ app.use('/auth',auth)
 app.use('/likedvideos',likedVideos)
 app.use('/unlikedvideos',unlikedVideos)
 app.use('/watchlater',watchLater)
+app.use('/notes',notes)
 
 //addVideosToDB();
 app.get('/',(req,res)=>{
