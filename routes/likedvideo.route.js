@@ -61,6 +61,23 @@ router.route('/:userId')
             res.status(400).json({ success: false, message: error.message });
         }
     })
-
+  
+    router.route('/:userId/:playId')
+    .delete(async(req,res)=>{
+        const {userId}= req;
+        let likedVideos= await LikedVideo.findOne({uid:userId})
+        const {playId}= req.params;
+        try{
+            const video= likedVideos.items.find(item=>item._id==playId)
+            if(video){
+                likedVideos.items.pull({_id:playId})
+                await likedVideos.save()
+                res.status(200).json({ success: true, video });
+            }        
+        }
+        catch(error){
+            res.status(400).json({ success: false, message: error.message });
+        }
+    })
 
 module.exports= router

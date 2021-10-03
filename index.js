@@ -8,6 +8,7 @@ const {initialConnection} = require('./DBconnection/DBconnect')
 const {addVideosToDB} = require('./models/video.model')
 const videos = require('./routes/video.route')
 const likedVideos = require('./routes/likedvideo.route')
+const unlikedVideos= require('./routes/unlikedvideo.route')
 const auth= require('./routes/auth.route')
 
 initialConnection();
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 app.use('/videos',videos)
 app.use('/auth',auth)
 app.use('/likedvideos',likedVideos)
+app.use('/unlikedvideos',unlikedVideos)
 
 //addVideosToDB();
 app.get('/',(req,res)=>{
