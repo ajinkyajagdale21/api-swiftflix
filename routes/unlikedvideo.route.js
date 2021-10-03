@@ -47,7 +47,7 @@ router.route('/:userId')
         let unLikedVideos = await UnlikedVideo.findOne({uid:userId})
         try{
             if(unLikedVideos.items.some(item=>item._id==playId)){
-                return res.json({ success: false, message: "Video is Already Liked" });
+                return res.json({ success: false, message: "Video is Already unLiked" });
             }
             unLikedVideos.items.push({_id:playId})
             unLikedVideos = await unLikedVideos.save();
