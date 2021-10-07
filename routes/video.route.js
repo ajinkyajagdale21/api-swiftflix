@@ -15,7 +15,7 @@ router.route('/')
     })
 
 router.param('playId',async(req,res,next,playId)=>{
-   const video= await Video.findOne({playId})
+   const video= await Video.findById(playId)
    if(!video){
      return res.status(400).json({success:false,message:"video not found"})
    }
